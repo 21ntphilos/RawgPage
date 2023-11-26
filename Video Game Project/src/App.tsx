@@ -16,17 +16,15 @@ function App() {
         lg: `"nav nav" "side body"`
       }}
       >
-        <GridItem area={"nav"} bg={"gray"}>
+        <GridItem area={"nav"} >
           <Navbar/>
           </GridItem>
         <Show above="lg">
-          <GridItem area={"side"} bg={"brown"}>Side</GridItem>
+          <GridItem area={"side"}>Side</GridItem>
         </Show>
-        <GridItem area={"body"} bg={"yellow"}>body</GridItem>
+        <GridItem area={"body"}>body</GridItem>
 
       </Grid>
-
-      <Button />
     </>
   )
 }
