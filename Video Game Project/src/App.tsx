@@ -3,6 +3,7 @@ import './App.css'
 import { Grid, GridItem, Show } from "@chakra-ui/react"
 import Navbar from "./components/navbar"
 import {theme} from "./theme"
+import GameGrid from "./components/GameGrid"
 
 
 function App() {
@@ -22,7 +23,9 @@ function App() {
         <Show above="lg">
           <GridItem area={"side"}>Side</GridItem>
         </Show>
-        <GridItem area={"body"}>body</GridItem>
+        <GridItem area={"body"}>
+          <GameGrid/>
+        </GridItem>
 
       </Grid>
     </>
