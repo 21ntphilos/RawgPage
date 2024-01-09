@@ -1,8 +1,7 @@
-import Button from "./components/button"
 import './App.css'
 import { Grid, GridItem, Show } from "@chakra-ui/react"
 import Navbar from "./components/navbar"
-import {theme} from "./theme"
+
 import GameGrid from "./components/GameGrid"
 
 
