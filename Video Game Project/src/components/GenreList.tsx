@@ -3,10 +3,11 @@ import useGenre, { Genre } from '../hooks/useGenre'
 import getShorterImage from '../service/imageOptimiser'
 
 interface Props{
-  onSelectGenre:(selectedGen:Genre)=>void
+  onSelectGenre:(selectedGen:Genre)=>void;
+  selectedGenre:Genre|null
 }
 
-const GenreList = ({onSelectGenre }:Props) => {
+const GenreList = ({ onSelectGenre, selectedGenre }:Props) => {
     const { data, isLoading, error } = useGenre()
 
   if (isLoading) return <Spinner/>
@@ -16,8 +17,8 @@ const GenreList = ({onSelectGenre }:Props) => {
       <List >
           {data.map(genre => <ListItem key={genre.id} paddingY='5px '>
             <HStack >
-                <Image src={getShorterImage(genre.image_background)} borderRadius={50} boxSize='32px' />
-              <Button onClick={() => onSelectGenre(genre)} variant='links' fontSize='lg'>{genre.name}</Button>
+                <Image src={getShorterImage(genre.image_background)} borderRadius={8} boxSize='32px' />
+              <Button onClick={() => onSelectGenre(genre)} variant='links' fontSize='large' fontWeight={genre.id === selectedGenre?.id ? "bold": "normal"}>{genre.name}</Button>
             </HStack> </ListItem> )}
     </List>
   )
