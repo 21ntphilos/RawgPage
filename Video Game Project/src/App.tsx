@@ -12,16 +12,19 @@ function App() {
   return (
     <>
       <Grid templateAreas={{
-        base: `"nav" "body"`,
-        md: `"nav" "side body"`,
+        base: `"nav" "body"`, 
         lg: `"nav nav" "side body"`
+      }}
+      templateColumns={{
+        base: `1fr`, // at base ie small screen, all the cards take 1fr
+        lg: '200px 1fr' // at bigger screen side takes 200px and the game grid takes 1fr
       }}
       >
         <GridItem area={"nav"} >
           <Navbar/>
           </GridItem>
         <Show above="lg">
-          <GridItem area={"side"}> 
+          <GridItem area={"side"} paddingX={5} > 
             <GenreList/>
           </GridItem>
         </Show>
