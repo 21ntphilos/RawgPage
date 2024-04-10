@@ -9,8 +9,8 @@ interface Props{
 
 const Navbar = ({ searchSubmit }:Props) => {
   return (
-    <HStack justifyContent={"space-between"} padding="0rem 5rem">
-        <Image src={logo} boxSize={"3rem"}/>
+    <HStack justifyContent={"space-between"} >
+      <Image src={logo} boxSize={"3rem"}/>
       <SearchInput onSubmit={searchSubmit}/>
       <ColorModeSwitch />
     </HStack>

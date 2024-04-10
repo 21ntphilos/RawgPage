@@ -9,12 +9,17 @@ interface Response <T> {
     results: T[];
 }
 
-const useData = <T>(url: string, reqConfig?:AxiosRequestConfig, dependencies?: unknown[]) => {
+const useData = <T>(url: string, reqConfig?:AxiosRequestConfig, dependencies?: any[]) => {
 
 
 	const [data, setData] = useState<T[]>([]);
 	const [error, setError] = useState("");
 	const [isLoading, setLoading] = useState(false);
+
+	if(url ==="/games"){
+	console.log(dependencies)
+	console.log(reqConfig)
+	}
 
 	useEffect(() => {
 		const controller = new AbortController();
@@ -23,6 +28,9 @@ const useData = <T>(url: string, reqConfig?:AxiosRequestConfig, dependencies?: u
 		apiClient
 			.get<Response<T>>(url, { signal: controller.signal, ...reqConfig })
 			.then((res) => {
+				// if(url==="/games"){
+				// 	console.log(res.data.results)
+				// }
 				setData(res.data.results);
 				setLoading(false);
 			})
