@@ -20,8 +20,10 @@ console.log(data)
     <>
         {error && <Text> {error} </Text> }
 
-          <SimpleGrid columns={{sm:1,  md:2, lg:3, xl: 4}} spacing={3} >
-        {/* {isLoading && skeleton.map(sk => <GameCardConatiner key={sk}><GameCardSkeleton  /></GameCardConatiner>)} */}
+          <SimpleGrid 
+          columns={{sm:1,  md:2, lg:3, xl: 4}} 
+          spacing={6} >
+        {isLoading && skeleton.map(sk => <GameCardConatiner key={sk}><GameCardSkeleton  /></GameCardConatiner>)}
         {data.map(game => <GameCardConatiner key={game.id} ><GameCard game={game} /></GameCardConatiner>)}
             </SimpleGrid>
     </>
