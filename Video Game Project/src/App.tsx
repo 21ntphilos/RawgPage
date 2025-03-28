@@ -36,7 +36,7 @@ function App() {
         }}
       >
         <GridItem area={"nav"} >
-          <Navbar searchSubmit={(searchText)=> setGameQuery({...gameQuery, searchText})} />
+          <Navbar searchSubmit={(searchText) => setGameQuery({ ...gameQuery, searchText })} />
         </GridItem>
         <Show above="lg"> {/*show this area of the page when the size is above large*/}
           <GridItem area={"side"} paddingX={0} margin={2} >
@@ -44,8 +44,8 @@ function App() {
           </GridItem>
         </Show>
         <GridItem area={"body"}>
-          
-          <GameHeading gameQuery={gameQuery} Text-align="left"/>
+
+          <GameHeading gameQuery={gameQuery} Text-align="left" />
           <HStack spacing={3} marginTop={3} marginBottom={5}>
             <Platforms selectedplatform={gameQuery.platform} onPlatSelect={(platform) => setGameQuery({ ...gameQuery, platform })} />
             <SortSelector selectedOrder={gameQuery.sortorder} onSelect={(sortorder) => setGameQuery({ ...gameQuery, sortorder })} />

@@ -11,7 +11,7 @@ const Navbar = ({ searchSubmit }:Props) => {
   return (
     <HStack justifyContent={"space-between"} >
       <Image src={logo} boxSize={"3rem"}/>
-      <SearchInput onSubmit={searchSubmit}/>
+      <SearchInput onSubmit={searchSubmit} />
       <ColorModeSwitch />
     </HStack>
   )

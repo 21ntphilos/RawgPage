@@ -16,7 +16,7 @@ const SearchInput = ({onSubmit}:Props) => {
         >
         <InputGroup>
         <InputLeftElement children={<BsSearch/>}/>
-        <Input ref={toSearch}borderRadius={40} placeholder='Search games...' variant="filled"/>
+        <Input ref={toSearch} borderRadius={40} placeholder='Search games...' variant="filled"/>
         </InputGroup>
     </form>
       )

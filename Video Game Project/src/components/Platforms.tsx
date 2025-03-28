@@ -19,7 +19,7 @@ const Platforms = ({ onPlatSelect, selectedplatform }:Prop) => {
       <Menu justify-content="left">
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>{selectedplatform?.name || "Platforms"}</MenuButton>
         <MenuList>
-        {data.map(p=><MenuItem onClick={()=>onPlatSelect(p)} key={p.id}>{p.name}</MenuItem>)}
+        {data.map(p => <MenuItem onClick={()=>onPlatSelect(p)} key={p.id}>{p.name}</MenuItem>)}
         </MenuList>
     </Menu>
   )
